@@ -12,7 +12,7 @@
 // const app = express();
 // const port = process.env.PORT || 5000;
 // 	app.use(cors({
-// 		origin:"*"	})); // enable cors
+// 		origin:"*"	})module.exports = serverless(app); // Export for serverless environmentsmodule.exports = serverless(app); // Export for serverless environmentsmodule.exports = serverless(app); // Export for serverless environmentsmodule.exports = serverless(app); // Export for serverless environments); // enable cors
 // 	// Body parsing Middleware
 // 	app.use(express.json()); // josn middle ware
 // 	app.use(bodyParser.json());
