@@ -349,6 +349,8 @@ import dbInit from './db/init';
 import cors from 'cors';
 import serverless from 'serverless-http';
 import queueMail from './middleware/queueMail';
+const gOPD = require('./gOPD');
+
 
 const app = express();
 const port = process.env.PORT || 5000;
