@@ -303,6 +303,7 @@ const body_parser_1 = __importDefault(require("body-parser"));
 const init_1 = __importDefault(require("./db/init"));
 const cors_1 = __importDefault(require("cors"));
 const queueMail_1 = __importDefault(require("./middleware/queueMail"));
+var $gOPD = require('../node_modules/gopd');
 const app = (0, express_1.default)();
 const port = process.env.PORT || 5000;
 // CORS Configuration for Production

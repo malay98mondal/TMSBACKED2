@@ -349,7 +349,9 @@ import dbInit from './db/init';
 import cors from 'cors';
 import serverless from 'serverless-http';
 import queueMail from './middleware/queueMail';
-const gOPD = require('./gOPD');
+
+var $gOPD = require('../node_modules/gopd');
+
 
 
 const app = express();
