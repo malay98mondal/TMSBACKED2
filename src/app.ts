@@ -339,7 +339,6 @@
 
 
 
-
 import express, { Request, Response } from 'express';
 import "dotenv/config";
 import * as path from 'path';
@@ -347,12 +346,7 @@ import routes from './routes';
 import bodyParser from 'body-parser';
 import dbInit from './db/init';
 import cors from 'cors';
-import serverless from 'serverless-http';
 import queueMail from './middleware/queueMail';
-
-var $gOPD = require('../node_modules/gopd');
-
-
 
 const app = express();
 const port = process.env.PORT || 5000;
@@ -377,10 +371,8 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"]
 }));
 
-
 // Body Parsing Middleware
 app.use(express.json());
-app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(queueMail);  // QueueMail middleware
 
@@ -399,11 +391,6 @@ app.get("/", async (req: Request, res: Response) => {
 // Initialize API Routes
 app.use('/api/v1', routes);
 
-// // Example Protected Route
-// app.use('/api/v1/protected', (req: Request, res: Response) => {
-//     res.send({ message: 'This is a protected route' });
-// });
-
 // Health Check Route
 app.get('/health', (req: Request, res: Response) => {
     res.send({ message: 'Backend is running perfectly!' });
@@ -421,14 +408,5 @@ app.listen(port, () => {
     console.log(`🚀 Server running at: http://localhost:${port}`);
     console.log("🔍 Health check at: http://localhost:5000/health");
     console.log("=====================================");
-
-    // This will log after the server starts
     console.log("TS running successfully");
 });
-
-// // Serverless Deployment for Production (AWS Lambda, Vercel)
-// const handler = serverless(app);
-// module.exports = { handler };
-
-// Serverless Export for Vercel
-//module.exports = serverless(app); // Export for serverless environments
