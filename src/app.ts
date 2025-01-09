@@ -427,4 +427,4 @@ app.listen(port, () => {
 // module.exports = { handler };
 
 // Serverless Export for Vercel
-module.exports = serverless(app); // Export for serverless environments
+//module.exports = serverless(app); // Export for serverless environments
